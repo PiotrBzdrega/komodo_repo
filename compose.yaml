@@ -1,0 +1,21 @@
+## 🦎 Hello Komodo 🦎
+services:
+    httpd:
+        container_name: my-apache-app
+        ports:
+            - '8080:80'
+        volumes:
+            - '/home/pi/apache:/usr/local/apache2/htdocs/'
+        image: 'httpd:latest'
+        restart: always
+    filebrowser:
+        container_name: filebrowser
+        ports:
+            - 8083:8080
+        volumes:
+            - /home/pi/apache:/data
+            - /home/pi/docker/filebrowser:/config
+        environment:
+            - FB_BASEURL=/f
+        image: hurlenko/filebrowser
+        restart: always
