@@ -1,0 +1,7 @@
+[[server]] # Declare a new server
+name = "server-prod"
+description = "the prod server"
+tags = ["prod"]
+config.address = "http://172.20.73.44:8120"
+config.region = "AshburnDc1"
+config.enabled = true # default: false
